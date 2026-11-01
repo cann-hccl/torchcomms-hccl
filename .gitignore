@@ -39,5 +39,5 @@ venv/
 .pytest_cache/
 
 # Agents
-.claude/
-.omo/
+**/.claude/
+**/.omo/
