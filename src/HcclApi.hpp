@@ -29,6 +29,7 @@ class HcclApi {
    * @return HCCL 结果码
    */
   virtual HcclResult getRootInfo(HcclRootInfo* rootInfo) = 0;
+
   /**
    * @brief 根据 RootInfo 初始化通信器
    *
@@ -43,12 +44,14 @@ class HcclApi {
       const HcclRootInfo* rootInfo,
       uint32_t rank,
       HcclComm* comm) = 0;
+
   /**
    * @brief 销毁通信器
    *
    * @param comm 通信器
    * @return HCCL 结果码
    */
+
   virtual HcclResult commDestroy(HcclComm comm) = 0;
   /**
    * @brief 查询异步错误状态
@@ -57,6 +60,7 @@ class HcclApi {
    * @param asyncError 输出的异步错误码
    * @return HCCL 结果码
    */
+
   virtual HcclResult getCommAsyncError(
       HcclComm comm,
       HcclResult* asyncError) = 0;

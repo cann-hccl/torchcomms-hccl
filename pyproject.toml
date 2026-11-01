@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "CANN HCCL backend for torchcomms"
 readme = "README.md"
 license = { file = "LICENSE" }
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 authors = [
     { name = "Yuanhao Ji" },
 ]
@@ -19,7 +19,6 @@ classifiers = [
     "Operating System :: POSIX :: Linux",
     "Programming Language :: C++",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
@@ -28,10 +27,13 @@ classifiers = [
 
 dependencies = [
     "torch==2.12.0",
-    "torch-npu==2.12.0",
+    "torchcomms==0.3.1",
 ]
 
 [project.optional-dependencies]
+npu = [
+    "torch-npu==2.12.0.post3",
+]
 dev = [
     "pytest",
     "pylint",
@@ -45,7 +47,7 @@ hccl = "torchcomms_hccl"
 packages = ["torchcomms_hccl"]
 
 [tool.pylint.main]
-py-version = "3.10"
+py-version = "3.11"
 ignore = ["_comms_hccl"]
 
 [tool.pylint.'messages control']

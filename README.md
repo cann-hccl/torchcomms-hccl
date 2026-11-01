@@ -19,9 +19,9 @@ Only `all_reduce` is implemented; other collectives raise "not supported".
 | Package | Version |
 |---------|---------|
 | torch | 2.12.0 |
-| torch-npu | 2.12.0 |
+| torch-npu | 2.12.0.post3 |
 | torchcomms | 0.3.1 |
-| Python | 3.10 – 3.13 |
+| Python | 3.11 – 3.13 |
 
 `torch-npu` and `torchcomms` both pin `torch==2.12.0`; install them as this set.
 
@@ -34,9 +34,9 @@ Only `all_reduce` is implemented; other collectives raise "not supported".
 
 ## Requirements
 
-- Python >= 3.10, CMake >= 3.22, a C++17 compiler
+- Python >= 3.11, CMake >= 3.22, a C++17 compiler
 - Build: `torch==2.12.0` (CPU build) + `torchcomms==0.3.1`
-- Runtime: CANN Toolkit, `torch-npu==2.12.0`, NPU hardware
+- Runtime: CANN Toolkit, `torch-npu==2.12.0.post3`, NPU hardware
 
 > **`torchcomms` is not on PyPI** (the PyPI name is a placeholder). Install it
 > from the PyTorch index (it pins `torch==2.12.0`):
@@ -59,8 +59,9 @@ bash build.sh
 pip install dist/*.whl
 ```
 
-From PyPI: install `torchcomms==0.3.1` (PyTorch index) and `torch-npu==2.12.0`
-first, then `pip install torchcomms-hccl`.
+From PyPI: `torchcomms` is not on PyPI, so install it from the PyTorch index
+first (along with `torch-npu==2.12.0.post3` for NPU), then
+`pip install torchcomms-hccl`.
 
 ## Usage
 

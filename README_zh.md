@@ -19,9 +19,9 @@ comm = torchcomms.new_comm("hccl", torch.device("npu"))
 | 包 | 版本 |
 |----|------|
 | torch | 2.12.0 |
-| torch-npu | 2.12.0 |
+| torch-npu | 2.12.0.post3 |
 | torchcomms | 0.3.1 |
-| Python | 3.10 – 3.13 |
+| Python | 3.11 – 3.13 |
 
 `torch-npu` 与 `torchcomms` 均依赖 `torch==2.12.0`,请按此组合安装。
 
@@ -34,9 +34,9 @@ comm = torchcomms.new_comm("hccl", torch.device("npu"))
 
 ## 依赖
 
-- Python >= 3.10、CMake >= 3.22、支持 C++17 的编译器
+- Python >= 3.11、CMake >= 3.22、支持 C++17 的编译器
 - 编译期：`torch==2.12.0`(CPU 版)+ `torchcomms==0.3.1`
-- 运行期：CANN Toolkit、`torch-npu==2.12.0`、NPU 硬件
+- 运行期：CANN Toolkit、`torch-npu==2.12.0.post3`、NPU 硬件
 
 > **`torchcomms` 不在 PyPI 上**(PyPI 同名包是占位包),需从 PyTorch 官方源安装
 > (它依赖 `torch==2.12.0`):
@@ -59,8 +59,8 @@ bash build.sh
 pip install dist/*.whl
 ```
 
-从 PyPI 安装:先装 `torchcomms==0.3.1`(PyTorch 源)与 `torch-npu==2.12.0`,再
-`pip install torchcomms-hccl`。
+从 PyPI 安装:`torchcomms` 不在 PyPI 上,先从 PyTorch 源安装它(以及
+`torch-npu==2.12.0.post3`),再 `pip install torchcomms-hccl`。
 
 ## 用法
 
